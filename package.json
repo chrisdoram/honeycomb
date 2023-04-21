@@ -1,0 +1,57 @@
+{
+  "name": "honeycomb",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "commit": "git-cz",
+    "dev": "vite",
+    "lint:scripts": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:styles": "stylelint \"src/**/*.css\"",
+    "prepare": "husky install",
+    "preview": "vite preview"
+  },
+  "lint-staged": {
+    "*.{css,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "eslint",
+      "prettier --write"
+    ],
+    "package.json": "npx sort-package-json"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-emoji-conventional"
+    }
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "@vitejs/plugin-react": "^4.0.0-beta.0",
+    "commitizen": "^4.3.0",
+    "cz-emoji-conventional": "^1.0.1",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.1",
+    "prettier": "^2.8.7",
+    "sort-package-json": "^2.4.1",
+    "stylelint": "^15.5.0",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-standard": "^33.0.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.0"
+  }
+}
